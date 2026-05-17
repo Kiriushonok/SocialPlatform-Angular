@@ -1,0 +1,17 @@
+.skill--tag {
+    padding: 0.25rem 0.5rem;
+    margin-right: 0.5rem;
+
+    display: inline;
+
+    border-radius: 0.25rem;
+    border: 1px solid var(--light-color);
+
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.skill--tag__main {
+    color: var(--violet);
+    border-color: var(--violet);
+}

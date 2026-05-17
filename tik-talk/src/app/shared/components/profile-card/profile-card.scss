@@ -1,0 +1,33 @@
+.profile--card {
+    padding: 2rem 1.5rem;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 2rem;
+
+    border: 1px solid var(--light-color);
+
+    .profile--card__identify--info {
+        display: grid;
+        grid-template-columns: 4.375rem 1fr;
+        column-gap: 1.25rem;
+        align-items: center;
+
+        .profile--card__identify--info__avatar {
+            width: 4.375rem;
+            height: 4.375rem;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .profile--card__identify--info__name--container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+    }
+
+    .profile--card__description {}
+
+    .profile--card__tags--container {}
+}
