@@ -1,25 +1,23 @@
+@if (profile) {
 <div class="profile--card">
     <div class="profile--card__identify--info">
-        <img src="/assets/images/cat.jpg" alt="avatar" class="profile--card__identify--info__avatar">
+        <img [src]="baseApiUrl + '/' + profile.avatarUrl" alt="avatar" class="profile--card__identify--info__avatar">
 
         <div class="profile--card__identify--info__name--container">
-            <span class="profile--card__identify--info__name--container__name">Райан Гослинг</span>
-            <span class="profile--card__identify--info__name--container__nickname">Gosling</span>
+            <span class="profile--card__identify--info__name--container__name">{{ profile.firstName }} {{
+                profile.lastName }}</span>
+            <span class="profile--card__identify--info__name--container__nickname">{{ profile.username }}</span>
         </div>
     </div>
 
-    <div class="profile--card__description">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam consequuntur dolorem vero mollitia
-        laudantium exercitationem omnis, aliquid eveniet, quaerat architecto atque autem molestiae deleniti illo!
-        Accusantium enim laudantium modi voluptates?
-    </div>
+    <div class="profile--card__description">{{ profile.description }}</div>
 
     <div class="profile--card__tags--container">
-        <app-skill-tag text="React" [isMain]="true" />
-        <app-skill-tag text="HTML" [isMain]="true" />
-        <app-skill-tag text="CSS" />
-        <app-skill-tag text="Angular" />
+        @for(skill of profile.stack; track skill) {
+        <app-skill-tag [text]="skill" />
+        }
     </div>
 
     <app-button text="Подписаться" />
 </div>
+}

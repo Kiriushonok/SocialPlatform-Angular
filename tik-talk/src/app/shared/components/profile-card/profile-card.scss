@@ -2,7 +2,7 @@
     padding: 2rem 1.5rem;
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr) 18rem 1fr;
     column-gap: 2rem;
     align-items: center;
 
@@ -44,5 +44,9 @@
         font-weight: 500;
     }
 
-    .profile--card__tags--container {}
+    .profile--card__tags--container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
 }
