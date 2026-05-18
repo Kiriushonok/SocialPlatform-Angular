@@ -1,14 +1,20 @@
+@import "fonts";
+
 :root {
     --dark-color: #000000;
 
     --light-color: #ffffff;
 
     --violet: #bfa1ff;
+
+    --violet-accent: #ae7aff;
 }
 
 body {
     background-color: var(--dark-color);
     color: var(--light-color);
+
+    font-family: 'JetBrains Mono', sans-serif;
 }
 
 @media(min-width: 1440px) {

@@ -3,8 +3,8 @@
         <img src="/assets/images/cat.jpg" alt="avatar" class="profile--card__identify--info__avatar">
 
         <div class="profile--card__identify--info__name--container">
-            <span>Райан Гослинг</span>
-            <span>Gosling</span>
+            <span class="profile--card__identify--info__name--container__name">Райан Гослинг</span>
+            <span class="profile--card__identify--info__name--container__nickname">Gosling</span>
         </div>
     </div>
 
@@ -15,7 +15,11 @@
     </div>
 
     <div class="profile--card__tags--container">
-        <app-skill-tag text="html" [isMain]="true" />
-        <app-skill-tag text="css" />
+        <app-skill-tag text="React" [isMain]="true" />
+        <app-skill-tag text="HTML" [isMain]="true" />
+        <app-skill-tag text="CSS" />
+        <app-skill-tag text="Angular" />
     </div>
+
+    <app-button text="Подписаться" />
 </div>
