@@ -1,0 +1,23 @@
+:host {
+    height: 100dvh;
+    margin: 0 10%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16rem;
+    align-items: center;
+}
+
+.login--form {
+    max-width: 40rem;
+
+    .login--form__title {
+        margin-bottom: 3.5rem;
+
+        display: block;
+
+        font-size: 3rem;
+        font-weight: 800;
+        line-height: 3.5rem;
+    }
+}

@@ -1,4 +1,5 @@
 @import "fonts";
+@import "margins";
 
 :root {
     --dark-color: #000000;
@@ -17,14 +18,40 @@
 }
 
 body {
-    background-color: var(--dark-color);
+    background: var(--dark-color);
+    background-image: url(/assets/images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     color: var(--light-color);
 
     font-family: 'JetBrains Mono', sans-serif;
 }
 
+.label {
+    display: block;
+
+    font-weight: 700;
+    line-height: 1rem;
+}
+
+.input {
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    margin-top: 0.5rem;
+
+    border: 1px solid var(--light-color);
+    border-radius: 0.5rem;
+
+    background-color: var(--dark-color);
+    color: var(--light-color);
+
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-family: 'JetBrains Mono', sans-serif;
+}
+
 @media(min-width: 1440px) {
-    body {
+    html {
         font-size: 18px;
     }
 }

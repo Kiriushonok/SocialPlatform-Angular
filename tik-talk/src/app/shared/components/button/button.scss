@@ -1,7 +1,8 @@
 .button {
     padding: 0.625rem;
+    width: 100%;
 
-    border: none;
+    border: 1px solid var(--dark-color);
     border-radius: 0.5rem;
 
     background-color: var(--violet-accent);
@@ -10,4 +11,6 @@
     font-size: 0.875rem;
     font-weight: 700;
     line-height: 1.5rem;
+
+    cursor: pointer;
 }
