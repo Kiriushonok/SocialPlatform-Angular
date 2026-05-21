@@ -1,0 +1,25 @@
+<form class="login--form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <span class="login--form__title">
+        Вход
+    </span>
+
+    <label class="label mb4">
+        Telegram username
+        <input formControlName="username" type="text" placeholder="Введите логин" class="input">
+        @if (form.controls.username.touched && form.controls.username.hasError('required')) {
+        <div class="error">Введите логин</div>
+        }
+    </label>
+
+    <label class="label mb8">
+        Пароль
+        <input formControlName="password" type="text" placeholder="Введите пароль" class="input">
+        @if (form.controls.password.touched && form.controls.password.hasError('required')) {
+        <div class="error">Введите пароль</div>
+        }
+    </label>
+
+    <app-button text="Войти" />
+</form>
+
+<img src="/assets/svg/logo-big.svg" alt="logo">
