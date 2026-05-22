@@ -21,4 +21,32 @@
         font-weight: 800;
         line-height: 3.5rem;
     }
+
+    .login--form__input--label {
+        margin-bottom: 0.5rem;
+
+        display: block;
+    }
+
+    .login--form__password--input__wrapper {
+        position: relative;
+
+        .password__eye--button {
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+
+            border: none;
+
+            background: none;
+            color: var(--light-color);
+
+            cursor: pointer;
+        }
+
+        .password__eye--button__active {
+            color: var(--violet-accent);
+        }
+    }
 }
