@@ -1,1 +1,48 @@
-<p>sidebar works!</p>
+<img src="/assets/svg/logo-small.svg" alt="logo" class="sidebar--logo">
+
+<nav>
+    <ul class="sidebar--links__list">
+        <li *ngFor="let menuItem of menuItems">
+            <a class="sidebar--links__list__item" [routerLink]="menuItem.link">
+                <svg [icon]="menuItem.icon" class="sidebar--links__list__item__icon"></svg>
+                {{ menuItem.label }}
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<div class="sidebar--subscribers__wrapper">
+    <p class="sidebar--subscribers__title">
+        Подписчики
+    </p>
+    <div class="sidebar--subscribers__cards--container">
+        @for (subscriber of subscribers$ | async; track subscriber.id) {
+        <app-subscriber-card [profile]="subscriber"></app-subscriber-card>
+        }
+    </div>
+
+    <div class="sidebar--subscribers__link--container">
+        <a [routerLink]="'/subscribers'" class="sidebar--subscribers__link--label">
+            Все подписчики
+            <svg icon="arrow-right-icon" class="sidebar--subscribers__link--icon"></svg>
+        </a>
+    </div>
+</div>
+
+<footer class="sidebar--footer">
+    @if(me(); as me) {
+    @if (me.avatarUrl) {
+    <img [src]="baseApiUrl + '/' + me.avatarUrl" alt="avatar" class="sidebar--footer__avatar">
+    } @else {
+    <img src="/assets/images/avatar-placeholder.jpg" alt="avatar" class="sidebar--footer__avatar">
+    }
+
+    <span class="sidebar--footer__nickname">
+        {{ me.username}}
+    </span>
+
+    <a routerLink="/settings">
+        <svg icon="settings-icon" class="sidebar--footer__settings-icon"></svg>
+    </a>
+    }
+</footer>

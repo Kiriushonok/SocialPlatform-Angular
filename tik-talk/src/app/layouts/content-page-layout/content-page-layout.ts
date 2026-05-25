@@ -12,7 +12,4 @@ import { ProfileService } from '../../shared/services/profile';
 export class ContentPageLayout {
   profileService = inject(ProfileService);
 
-  ngOnInit() {
-    this.profileService.getMe().subscribe();
-  }
 }

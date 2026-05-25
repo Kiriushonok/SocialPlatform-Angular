@@ -3,8 +3,10 @@
 
 :root {
     --dark-color: #000000;
+    --dark-hover-color: #262626;
 
     --light-color: #ffffff;
+    --light-secondary-color: #ffffffb5;
 
     --violet: #bfa1ff;
 
@@ -20,6 +22,8 @@
 }
 
 body {
+    height: 100dvh;
+
     background: var(--dark-color);
     background-image: url(/assets/images/background.jpg);
     background-repeat: no-repeat;
@@ -27,6 +31,10 @@ body {
     color: var(--light-color);
 
     font-family: 'JetBrains Mono', sans-serif;
+}
+
+a {
+    text-decoration: none;
 }
 
 .label {
