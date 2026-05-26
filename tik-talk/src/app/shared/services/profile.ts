@@ -24,10 +24,14 @@ export class ProfileService {
       );
   }
 
-  getSubscribersShortList() {
+  getAccount(id: number) {
+    return this.httpClient.get<Profile>(`${environment.baseApiUrl}/account/${id}`);
+  }
+
+  getSubscribersShortList(subsAmount = 3) {
     return this.httpClient.get<Pageble<Profile>>(`${environment.baseApiUrl}/account/subscribers/`)
       .pipe(
-        map(result => result.items.slice(0, 3))
+        map(result => result.items.slice(0, subsAmount))
       );
   }
 }

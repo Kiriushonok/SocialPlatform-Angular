@@ -1,1 +1,52 @@
-<p>profile-page works!</p>
+@if (profile$ | async; as profile) {
+<header class="profile--page__header">
+    <app-profile-header [profile]="profile"></app-profile-header>
+
+    <a routerLink="/settings" class="profile--page__settings--link">
+        Редактировать
+        <svg icon="settings-icon" class="profile--page__settings--icon"></svg>
+    </a>
+</header>
+
+<main class="profile--page__body">
+    <div>
+        <app-post-feed></app-post-feed>
+    </div>
+
+    <div>
+        <span class="profile--page__body__subscribers--title">
+            Подписчики
+        </span>
+        <div class="profile--page__body__subscribers--wrapper">
+            @for (subscriber of subscribers$ | async; track subscriber.id) {
+            <a [routerLink]="['/profile', subscriber.id]">
+                <img [src]="baseApiUrl + '/' + subscriber.avatarUrl" alt="avatar"
+                    class="profile--page__body__subscribers--avatar">
+            </a>
+            }
+
+            <a routerLink="/search">
+                <svg icon="plus-icon" class="profile--page__body__subscribers__search--icon"></svg>
+            </a>
+        </div>
+
+        <span class="profile--page__body__tags--title">
+            Навыки
+        </span>
+
+        <div class="profile--page__body__tags--container">
+            @for (skill of profile.stack; track skill) {
+            <app-skill-tag [text]="skill">
+            </app-skill-tag>
+            }
+        </div>
+
+        <span class="profile--page__body__description--title">
+            О себе
+        </span>
+        <span class="profile--page__body__description">
+            {{ profile.description }}
+        </span>
+    </div>
+</main>
+}

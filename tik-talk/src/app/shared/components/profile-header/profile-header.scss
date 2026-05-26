@@ -1,0 +1,33 @@
+:host {
+    display: grid;
+    grid-template-columns: 6rem 1fr;
+    column-gap: 1.5rem;
+    align-items: center;
+}
+
+.profile--header__avatar {
+    width: 6rem;
+    height: 6rem;
+
+    border-radius: 50%;
+}
+
+.profile--header__name--container {
+    text-align: left;
+
+    .profile--header__name {
+        margin-bottom: 0.25rem;
+
+        display: block;
+
+        font-size: 1.5rem;
+        font-weight: 800;
+        line-height: 2rem;
+    }
+
+    .profile--header__nickname {
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 1.25rem;
+    }
+}
