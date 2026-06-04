@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { SvgIcon } from "../../shared/components/svg-icon/svg-icon";
 import { NgForOf } from '@angular/common';
-import { RouterLink } from "@angular/router";
+import { RouterLink, RouterLinkActive } from "@angular/router";
 import { ProfileService } from '../../shared/services/profile';
 import { AsyncPipe } from '@angular/common';
 import { SubscriberCard } from './subscriber-card/subscriber-card';
@@ -11,7 +11,7 @@ import { environment } from '../../../environment';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [SvgIcon, NgForOf, RouterLink, AsyncPipe, SubscriberCard],
+  imports: [SvgIcon, NgForOf, RouterLink, AsyncPipe, SubscriberCard, RouterLinkActive],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.scss',
 })

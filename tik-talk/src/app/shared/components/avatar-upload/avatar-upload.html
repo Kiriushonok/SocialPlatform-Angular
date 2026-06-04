@@ -1,0 +1,12 @@
+<img [src]="preview()" alt="avatar" class="avatar">
+
+<div class="dropzone--wrapper" appDnd (fileDropped)="onFileDropped($event)">
+
+    <div class=" dropzone--container">
+        <svg icon="upload-icon" class="dropzone--container__upload--icon"></svg>
+
+        <span>Перетащите изображение или загрузите</span>
+    </div>
+
+    <input type="file" #filedrop class="avatar--input" (change)="fileBrowserHandler($event)">
+</div>

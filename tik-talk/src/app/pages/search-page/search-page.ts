@@ -1,22 +1,18 @@
 import { Component, inject, signal } from '@angular/core';
 import { ProfileService } from '../../shared/services/profile';
-import { Profile } from '../../shared/interfaces/Profile';
 import { ProfileCard } from "../../shared/components/profile-card/profile-card";
+import { ProfileFilters } from '../../shared/components/profile-filters/profile-filters';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-search-page',
-  imports: [ProfileCard],
+  imports: [ProfileCard, ProfileFilters, AsyncPipe],
   templateUrl: './search-page.html',
   styleUrl: './search-page.scss',
 })
 export class SearchPage {
   profileService = inject(ProfileService);
-  profiles = signal<Profile[]>([]);
+  profiles = this.profileService.filteredProfiles;
 
-  constructor() {
-    this.profileService.getTestAccounts()
-      .subscribe(value => {
-        this.profiles.set(value);
-      })
-  }
+  constructor() { }
 }

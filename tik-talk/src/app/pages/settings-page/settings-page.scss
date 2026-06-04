@@ -1,0 +1,35 @@
+:host {
+    padding: 1.5rem;
+
+    display: grid;
+    grid-template-columns: 20rem 1fr;
+    column-gap: 3rem;
+
+    overflow: hidden;
+}
+
+.profile--form {
+    min-height: calc(100dvh - 3rem);
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border: 1px solid var(--light-color);
+
+    background-color: var(--dark-color);
+
+    .profile--form__fields--container {
+        margin-bottom: 2rem;
+
+        display: grid;
+        row-gap: 1.5rem;
+
+        .two-columns-input-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 1rem;
+        }
+    }
+}

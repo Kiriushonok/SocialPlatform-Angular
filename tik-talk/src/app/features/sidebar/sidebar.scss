@@ -41,6 +41,7 @@
 
         cursor: pointer;
 
+        &.active,
         &:hover,
         &:focus-visible {
             background: var(--dark-hover-color);

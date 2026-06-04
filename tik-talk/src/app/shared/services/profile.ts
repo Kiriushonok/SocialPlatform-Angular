@@ -12,6 +12,7 @@ export class ProfileService {
   httpClient = inject(HttpClient);
 
   me = signal<Profile | null>(null);
+  filteredProfiles = signal<Profile[]>([]);
 
   getTestAccounts() {
     return this.httpClient.get<Profile[]>(`${environment.baseApiUrl}/account/test_accounts`);
@@ -33,5 +34,30 @@ export class ProfileService {
       .pipe(
         map(result => result.items.slice(0, subsAmount))
       );
+  }
+
+  patchProfile(profile: Partial<Profile>) {
+    return this.httpClient.patch<Profile>(
+      `${environment.baseApiUrl}/account/me`,
+      profile
+    )
+  }
+
+  uploadAvatar(file: File) {
+    const fomrData = new FormData();
+
+    fomrData.append("image", file);
+
+    return this.httpClient.post<Profile>(
+      `${environment.baseApiUrl}/account/upload_image`,
+      fomrData
+    )
+  }
+
+  filterProfiles(params: Record<string, any>) {
+    return this.httpClient.get<Pageble<Profile>>(`${environment.baseApiUrl}/account/accounts`, { params })
+      .pipe(
+        tap(res => this.filteredProfiles.set(res.items))
+      )
   }
 }
